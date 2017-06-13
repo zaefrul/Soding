@@ -13,6 +13,7 @@ namespace Soding.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
+        [Display(Name = "Assignee")]
         public string Name { get; set; }
         [Required]
         [DataType(DataType.EmailAddress)]

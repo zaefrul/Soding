@@ -28,7 +28,7 @@ namespace Soding.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Task task = db.Tasks.Find(id);
+            Task task = db.Tasks.Include(t => t.User).FirstOrDefault(t => t.Id == id);
             if (task == null)
             {
                 return HttpNotFound();
